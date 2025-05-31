@@ -238,6 +238,15 @@ document.addEventListener("DOMContentLoaded", () => {
     showQuestion();
     startQuizBtn.disabled = true;
     setTimeout(() => (startQuizBtn.disabled = false), 1000);
+
+    // Mute tick sound for unlock
+    const tickSound = document.getElementById("tickSound");
+    tickSound.volume = 0; // Mute for unlock
+    tickSound.play().then(() => {
+      tickSound.pause();
+      tickSound.currentTime = 0;
+      tickSound.volume = 1; // Restore volume
+    });
   };
 
   nameInput.oninput = () => {
