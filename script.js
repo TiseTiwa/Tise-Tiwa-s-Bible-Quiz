@@ -92,9 +92,9 @@ function showQuestion() {
   // Progress
   document.getElementById("progressArea").textContent = `Question ${current + 1} of ${shuffledQuestions.length}`;
 
-  // Shuffle options for this question
+  // Do NOT shuffle options; keep A, B, C, D order
   const q = shuffledQuestions[current];
-  const optionOrder = shuffleOptions([0, 1, 2, 3]);
+  const optionOrder = [0, 1, 2, 3];
   q._optionOrder = optionOrder;
 
   document.getElementById("questionArea").textContent = q.question;
