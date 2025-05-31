@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tise-Tiwa's Bible Quiz</title>
+    <link rel="icon" type="image/png" href="/Tise-Tiwa logo.png" />
+    <link rel="stylesheet" href="/Tise-Tiwa Quiz.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="select-none">
+    <!-- Landing Page -->
+    <div
+      id="landingPage"
+      class="flex flex-col items-center justify-center min-h-screen bg-gray-100"
+    >
+      <div class="w-full max-w-md bg-white shadow-md rounded-lg p-6">
+        <h1 class="text-3xl font-bold mb-6 text-center">
+          Welcome to Tise-Tiwa's Bible Quiz
+        </h1>
+        <label for="nameInput" class="block mb-2 font-semibold">Name:</label>
+        <input
+          id="nameInput"
+          type="text"
+          class="w-full border rounded p-2 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          aria-label="Enter your name"
+        />
+        <div id="nameError" class="text-red-600 text-sm mb-2 hidden">
+          This field is required
+        </div>
+        <button
+          id="startQuizBtn"
+          class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+          aria-label="Start Quiz"
+        >
+          Start Quiz
+        </button>
+        <div class="text-xs text-gray-400 mt-2 text-center">
+          <span>High score is stored only in your browser.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Page -->
+    <div
+      id="quizPage"
+      class="flex flex-col items-center justify-center min-h-screen bg-gray-100 hidden"
+    >
+      <h1 class="text-4xl font-bold mb-8" id="quizTitle">
+        Tise-Tiwa's Bible Quiz
+      </h1>
+      <div class="w-full max-w-md bg-white shadow-md rounded-lg p-6">
+        <div id="progressArea" class="mb-2 text-sm text-gray-600"></div>
+        <div id="questionArea" class="mb-4 text-lg font-semibold"></div>
+        <div id="optionsArea" class="mb-4"></div>
+        <div id="timer" class="mb-4 text-right text-black-500"></div>
+        <button
+          id="nextBtn"
+          class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 hidden"
+          aria-label="Next Question"
+        >
+          Next
+        </button>
+        <button
+          id="retryBtn"
+          class="w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 hidden mt-2"
+          aria-label="Try Again"
+        >
+          Try Again
+        </button>
+        <button
+          id="shareBtn"
+          class="w-full bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 hidden mt-2"
+          aria-label="Share Score"
+        >
+          Share Your Score
+        </button>
+        <div id="resultArea" class="mt-4 font-bold"></div>
+        <div id="summaryArea" class="mt-2 text-sm text-gray-700"></div>
+      </div>
+    </div>
+
+    <footer class="w-full text-center py-4 text-xs text-gray-400">
+      &copy; <span id="year"></span> Tise-Tiwa's Bible Quiz. All rights
+      reserved.
+    </footer>
+
+    <script src="/Tise-Tiwa Quiz.js"></script>
+    <audio
+      id="correctSound"
+      src="/correct-choice-43861.mp3"
+      preload="auto"
+    ></audio>
+    <audio id="wrongSound" src="/wrong-47985.mp3" preload="auto"></audio>
+    <audio id="tickSound" src="/clock-ticking-83775.mp3" preload="auto"></audio>
+  </body>
+</html>
